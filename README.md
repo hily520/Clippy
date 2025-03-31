@@ -8,7 +8,7 @@ MVP 由四个主要部分组成：
 1. **前端（Electron 桌面应用）**
 2. **本地后端（Electron 主进程）**
 3. **服务器后端（公共领域管理和 Token 奖励）**
-4. **智能合约（以太坊 BNB 测试链上的 BEP-20 代币）**
+4. **智能合约（BNB Smart Chain 测试链上的 BEP-20 代币）**
 
 ### 详细设计
 
@@ -16,7 +16,7 @@ MVP 由四个主要部分组成：
 **技术选择：**
 - 采用 Electron 框架（版本 22 或最新稳定版）
 - UI 使用 React 或 Angular，确保用户友好性
-- 与 ETH 兼容钱包（如 Metamask、BITGET、BINANCE Wallet）集成 DID 认证
+- 兼容钱包（如 Metamask、BITGET、BINANCE Wallet）集成 DID 认证
 
 **主要 UI 组件：**
 - **聊天界面：** 输入框、消息显示区域，支持用户提问和 AI 或专家回答。
@@ -40,7 +40,7 @@ MVP 由四个主要部分组成：
 - **视频文件**：使用 Google Cloud Video Intelligence 提取内容。
 
 **数据存储：**
-- 采用 SQLite 存储 AI 处理后的知识总结，每条记录哈希链接前一记录，模拟个人隐私链。
+- 采用 MySQL 存储 AI 处理后的知识总结，每条记录哈希链接前一记录，模拟个人隐私链。
 - 数据库加密确保隐私安全。
 
 **聊天交互：**
@@ -52,7 +52,7 @@ MVP 由四个主要部分组成：
 
 #### **服务器后端设计**
 **技术选择：**
-- Node.js + Express.js 作为 Web 服务器
+- Java + Spring 作为 Web 后端框架
 - MySQL 存储公共领域问题和答案
 - Ethers.js 交互以太坊测试链
 
@@ -66,12 +66,14 @@ MVP 由四个主要部分组成：
 - Token 由服务器持有的以太坊钱包进行分发。
 
 #### **智能合约设计**
+后期将采用 Quorum 隐私链，数据将存储在 IPFS
 **平台与功能：**
-- 部署在以太坊 BNB 测试链，采用 BEP-20 标准。
+- 部署在 BNB Smart Chain 测试链，采用 BEP-20 标准。
 - 主要功能包括：
-  - **mint**（生成 Token）
-  - **transfer**（Token 交易）
-  - **balanceOf**（查询 Token 余额）
+  - **addQuestion**（添加精选问题）
+  - **addAnswer**（添加精选答案）
+  - **claimToken**（领取代币）
+  - **addToBlacklist**（加入黑名单）
 
 **Token 经济模型：**
 - 初始 Token 设定为 1 ClippyToken 奖励。
