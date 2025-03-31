@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- 发光外圈 -->
+  <circle cx="75" cy="75" r="60" stroke="#ffffff" stroke-width="4" fill="none"/>
+  
+  <!-- 主体 -->
+  <circle cx="75" cy="75" r="50" fill="#3f51b5"/>
+  
+  <!-- 眼睛 -->
+  <g id="eyes">
+    <!-- 左眼 -->
+    <circle cx="60" cy="60" r="10" fill="white"/>
+    <circle cx="60" cy="60" r="5" fill="black"/>
+    
+    <!-- 右眼 -->
+    <circle cx="90" cy="60" r="10" fill="white"/>
+    <circle cx="90" cy="60" r="5" fill="black"/>
+  </g>
+  
+  <!-- 嘴巴 -->
+  <path d="M 55 90 A 20 20 0 0 0 95 90" 
+        stroke="white" 
+        stroke-width="3" 
+        fill="none"/>
+</svg>
